@@ -1,0 +1,17 @@
+box: wercker/rvm@2.0.1
+build:
+  steps:
+    - wercker/bundle-install@1.1.1
+deploy:
+  steps:
+    - script:
+        name: configure
+        code: |
+          git config --global user.email "fly1tkg@gmail.com"
+          git config --global user.name "wercker"
+          bundle ex rake setup_github_pages\["$GIT_REMOTE"\]
+    - script:
+        name: deploy to github
+        code: |
+          bundle ex rake generate
+          bundle ex rake deploy

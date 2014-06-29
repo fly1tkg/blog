@@ -265,7 +265,7 @@ multitask :push do
     puts "\n## Committing: #{message}"
     system "git commit -m \"#{message}\""
     puts "\n## Pushing generated #{deploy_dir} website"
-    system "git push origin #{deploy_branch}"
+    system "git push -f origin #{deploy_branch}"
     puts "\n## Github Pages deploy complete"
   end
 end
@@ -308,6 +308,8 @@ end
 desc "Set up _deploy folder and deploy branch for Github Pages deployment"
 task :setup_github_pages, :repo do |t, args|
   if args.repo
+    puts '------'
+    puts args.repo
     repo_url = args.repo
   else
     puts "Enter the read/write url for your repository"
