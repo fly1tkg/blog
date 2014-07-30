@@ -45,6 +45,12 @@ android {
 
 以上で動くようになります
 
+## 追記: Android Studioの設定
+
+Run > Edit Configrations… を選択し、Defaults > Android Testsの設定でSpecific instrumentation runnerに先ほどのCustomInstrumentationRunnerを入力します。
+
+{% img /images/2014/07/android_studio.png %}
+
 ## 参考
 
 https://code.google.com/p/dexmaker/issues/detail?id=2
