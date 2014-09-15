@@ -1,0 +1,96 @@
+---
+layout: post
+title: 自作gemをS3でホスティングして利用する
+date: 2014-09-16 00:02:29 +0900
+comments: true
+categories:
+  - ruby
+  - bundler
+  - gem
+---
+
+## Gemを作る
+
+bundlerがインストールされた状態で
+
+```
+bundle gem fuga
+```
+
+適当に実装を追加したら
+
+```
+rake build
+```
+
+で、pkg/fuga-0.0.1.gemというものができます。
+
+<!--more-->
+
+## S3に配置するファイルを作成する
+
+まず作業ディレクトリを作ります
+
+```
+mkdir public
+cd public
+```
+
+gemsというフォルダを作ってその中にさきほど生成したfuga-0.0.1.gemを配置します
+
+```
+mkdir gems
+cp fuga-0.0.1.gem gems/
+```
+
+カレントディレクトリがpublicの状態で
+
+```
+gem generate_index
+```
+
+を実行すると必要なファイルが生成されます。
+
+```
+.
+├── gems
+│   └── fuga-0.0.1.gem
+├── latest_specs.4.8
+├── latest_specs.4.8.gz
+├── prerelease_specs.4.8
+├── prerelease_specs.4.8.gz
+├── quick
+│   └── Marshal.4.8
+│       └── fuga-0.0.1.gemspec.rz
+├── specs.4.8
+└── specs.4.8.gz
+```
+
+CreateボタンをクリックしてBucketを作成する
+
+## S3のbucketにファイルを配置する
+
+publicフォルダ以下のファイルすべてのファイルをS3のbucketに保存して、aclをpublic_readにする。
+
+## 実際に取得できるか確認する
+
+```
+gem source 'https://s3-ap-northeast-1.amazonaws.com/<bucket-name>/'
+gem search fuga -r
+```
+
+を実行して、fugaが見つかればOK
+
+## Gemfileで利用する
+
+```ruby
+# Gemfile
+source 'https://rubygems.org'
+source 'https://s3-ap-northeast-1.amazonaws.com/<bucket-name>/'
+
+gem hoge
+```
+
+## 参考
+
+http://d.hatena.ne.jp/ux00ff/20121207/1354898619
