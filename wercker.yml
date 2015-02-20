@@ -4,6 +4,7 @@ build:
     - wercker/bundle-install
 deploy:
   steps:
+    - wercker/bundle-install
     - script:
         name: configure
         code: |
