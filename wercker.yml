@@ -1,7 +1,7 @@
-box: wercker/rvm@2.0.1
+box: wercker/rvm
 build:
   steps:
-    - wercker/bundle-install@1.1.1
+    - wercker/bundle-install
 deploy:
   steps:
     - script:
