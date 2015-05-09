@@ -19,6 +19,9 @@ categories:
 - 到着時間: 1時間ほど
 - 公式サイト: http://www.kingbus.com.tw/ticketPriceResult.php?sid=99
 
+桃園国際空港から台北駅(台北車站)へバスで行く方法はこちら
+http://fly1tkg.github.io/2015/05/taoyuan-to-taipei/
+
 <!--more-->
 
 ## 台北駅(台北車站)からバス停までの移動
