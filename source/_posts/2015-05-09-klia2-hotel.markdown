@@ -1,0 +1,14 @@
+---
+layout: post
+title: "KLIA2にはカプセルホテルがある"
+date: 2015-05-09 19:35:58 +0800
+comments: true
+categories: 
+  - malaysia
+---
+
+{% img /images/2015/05/klia2-hotel/1.jpg %}
+
+シャワーのみはMR20（ミネラルウォーターつき）なので、空港泊の人は利用してもいいかも
+
+場所はKLIA2の1階の端っこにある
