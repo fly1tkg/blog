@@ -1,12 +1,13 @@
 $blockquote: $type-border !default;
 
-// Fonts
-$sans: "Open Sans","Helvetica Neue", Arial, NanumBarunGothic, "Apple SD Gothic Neo", AppleGothic, "Malgun Gothic", DotumChe, sans-serif !default;
-$serif: "PT Serif", Georgia, Times, "Times New Roman", serif !default;
-$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", DotumChe, monospace !default;
-$heading-font-family: "Fjalla One", "Georgia", "Helvetica Neue", Arial, NanumBarunGothic, "Apple SD Gothic Neo", AppleGothic, "Malgun Gothic", DotumChe, sans-serif !default;
-$header-title-font-family: $heading-font-family !default;
-$header-subtitle-font-family: $serif !default;
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+$sans: 'Noto Sans JP', sans-serif !default;
+$serif: 'Noto Sans JP', serif !default;
+$mono: 'Noto Sans JP', monospace !default;
+$heading-font-family: 'Noto Sans JP', sans-serif !default;
+$header-title-font-family: 'Noto Sans JP', sans-serif !default;
+$header-subtitle-font-family: 'Noto Sans JP', serif !default;
 
 .heading {
   font-family: $heading-font-family;
@@ -42,16 +43,16 @@ h1 {
   @extend .heading;
   text-rendering: optimizelegibility;
   margin-bottom: 1em;
-  font-weight: bold;
+  font-weight: 600;
 }
 h2, section h1 {
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: 600;
 }
 h3, section h2, section section h1 {
   font-size: 1.3em;
   color: $subheader-color;
-  font-weight: bold;
+  font-weight: 600;
 }
 h4, section h3, section section h2, section section section h1 {
   font-size: 1em;
@@ -79,7 +80,7 @@ ol { list-style-type: decimal;
 ul, ol { &, ul, ol { margin-left: 2em; }}
 ul, ol { ul, ol { margin-bottom: 0em; }}
 
-strong { font-weight: bold; }
+strong { font-weight: 600; }
 
 em { font-style: italic; }
 
@@ -94,7 +95,7 @@ q { font-style: italic;
 
 em, dfn { font-style: italic; }
 
-strong, dfn { font-weight: bold; }
+strong, dfn { font-weight: 600; }
 
 del, s { text-decoration: line-through; }
 
